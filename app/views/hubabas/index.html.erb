@@ -1,0 +1,29 @@
+<h1>Listing hubabas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Man</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hubabas.each do |hubaba| %>
+      <tr>
+        <td><%= hubaba.name %></td>
+        <td><%= hubaba.man %></td>
+        <td><%= link_to 'Show', hubaba %></td>
+        <td><%= link_to 'Edit', edit_hubaba_path(hubaba) %></td>
+        <td><%= link_to 'Destroy', hubaba, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Hubaba', new_hubaba_path %>
